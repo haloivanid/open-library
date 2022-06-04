@@ -15,7 +15,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
-<body>
+<body x-data="{ isOpen: true, modalCollectionOpen: false }">
   <!-- This example requires Tailwind CSS v2.0+ -->
   <div class="relative bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto">
@@ -49,7 +49,7 @@
           </div>
 
           <!-- Top Menu Responsive -->
-          <div x-data="{ isOpen: true }" class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+          <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
             <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div class="px-5 pt-4 flex items-center justify-between">
                 <div>
@@ -108,7 +108,11 @@
             <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">Find all the books of knowledge, novel,  journal, science articles, etc in all the collections that we have digitally without the hassle of having to search manually in conventional libraries.</p>
             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div class="rounded-md shadow hover:shadow-slate-500">
-                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"> Example Collection </a>
+                <button
+                  @click="modalCollectionOpen = !modalCollectionOpen"
+                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                > Example Collection </button>
+                <!-- <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"> Example Collection </a> -->
               </div>
               <div class="relative">
                 <div class="mt-3 sm:mt-0 sm:ml-3">
@@ -146,5 +150,90 @@
         </li>
     </ul>
   </footer>
+
+  <!-- Modal Example Collections -->
+  <div 
+    x-show="modalCollectionOpen"
+    x-transition:enter="transition ease-out duration-500"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="relative z-10"
+    aria-labelledby="modal-title"
+    role="dialog"
+    aria-modal="true"
+  >
+  <div class="fixed inset-0 bg-gray-200 bg-opacity-75"></div>
+
+  <div class="fixed z-20 inset-0 overflow-y-auto">
+    <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+      <div
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
+        x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+        x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform sm:my-8 sm:max-w-lg sm:w-full"
+      >
+        <div class="flex flex-row-reverse p-2 -mb-8">
+          <button type="button" @click="modalCollectionOpen = !modalCollectionOpen" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <span class="sr-only">Close main menu</span>
+            <!-- Heroicon name: outline/x -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="items-center bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <div class="mt-4 sm:mt-0 sm:ml-4">
+            <h3 class="text-center text-lg leading-6 font-medium text-gray-900" id="modal-title">Our Collection</h3>
+          </div>
+          <div class="flex items-start mt-4 w-full bg-white">
+            <img src="assets/images/example-book/lima-menara.jpg" alt="Lima Menara" class="mx-auto w-60 h-60 rounded-lg overflow-hidden">
+            <div class="flex ml-4 w-60 h-full text-left">
+              <ul>
+                <li class="font-medium">Judul:</li>
+                <li class="font-thin">Negeri Lima Menara</li>
+                <li class="font-medium">Pengarang:</li>
+                <li class="font-thin">Ahmad Fuadi</li>
+                <li class="font-medium">Genre:</li>
+                <li class="font-thin">Edukasi, Religi, Roman</li>
+                <li class="font-medium">Tanggal Terbit:</li>
+                <li class="font-thin">Juli 2009</li>
+                <li class="font-medium">ISBN:</li>
+                <li class="font-thin">ISBN 978-979-22-4861-6</li>
+              </ul> 
+            </div>
+          </div>
+        </div>
+        <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+          <div>
+            <nav class="relative z-50 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+              <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                <span class="sr-only">Previous</span>
+                <!-- Heroicon name: solid/chevron-left -->
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <!-- Current: "z-10 bg-indigo-50 border-indigo-500 text-indigo-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
+              <a href="#" aria-current="page" class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"> 1 </a>
+              <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                <span class="sr-only">Next</span>
+                <!-- Heroicon name: solid/chevron-right -->
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modal Example Collections -->
 </body>
 </html>
