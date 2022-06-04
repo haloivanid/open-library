@@ -115,9 +115,9 @@
                 <!-- <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"> Example Collection </a> -->
               </div>
               <div class="relative">
-                <div class="mt-3 sm:mt-0 sm:ml-3">
-                  <div class="absolute top-0 right-0 -mr-4 -mt-1 w-4 h-4 rounded-full bg-sky-300 animate-ping"></div>
-                  <div class="absolute top-0 right-0 -mr-4 -mt-1 w-4 h-4 rounded-full bg-sky-400 opacity-75"></div>
+                <div class="mt-3 sm:mt-0 sm:ml-0">
+                  <div class="absolute top-0 right-0 sm:-mr-4 -mr-1 -mt-1 w-4 h-4 rounded-full bg-sky-300 animate-ping"></div>
+                  <div class="absolute top-0 right-0 sm:-mr-4 -mr-1 -mt-1 w-4 h-4 rounded-full bg-sky-400 opacity-75"></div>
                 </div>
                 <a href="#" class="mt-3 sm:mt-0 sm:ml-3 w-full flex items-center justify-center px-8 py-3 border border-transparent md:py-4 md:text-lg md:px-10 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 hover:shadow-slate-300 hover:shadow-md"> Be Our Member </a>
               </div>
