@@ -25,23 +25,39 @@
                 'genre' => 'Edukasi, Religi, Roman',
                 'date' => 'Juli 2009',
                 'isbn' => '978-979-22-4861-6',
-                'img' => 'assets/images/example-book/lima-menara.jpg'
+                'img' => 'assets/images/example-book/ex-book-1.jpg'
               ],
               (object) [
-                'title' => 'Negeri Lima Menara 2',
-                'author' => 'Ahmad Fuadi',
-                'genre' => 'Edukasi, Religi, Roman',
-                'date' => 'Juli 2009',
-                'isbn' => '978-979-22-4861-6',
-                'img' => 'assets/images/example-book/lima-menara.jpg'
+                'title' => 'Aku Bukannya Menyerah, Hanya Sedang Lelah',
+                'author' => 'Geulbaewoo',
+                'genre' => 'Self Help, Non-Fiction',
+                'date' => 'Juni 2021',
+                'isbn' => '978-623-73-5171-9',
+                'img' => 'assets/images/example-book/ex-book-2.jpg'
               ],
               (object) [
-                'title' => 'Negeri Lima Menara 3',
-                'author' => 'Ahmad Fuadi',
-                'genre' => 'Edukasi, Religi, Roman',
-                'date' => 'Juli 2009',
-                'isbn' => '978-979-22-4861-6',
-                'img' => 'assets/images/example-book/lima-menara.jpg'
+                'title' => 'Filosofi Teras',
+                'author' => 'Henry Manampiring',
+                'genre' => 'Edukasi, Filsafat, Self Help',
+                'date' => 'Nopember 2018',
+                'isbn' => '978-6-02412-518-9',
+                'img' => 'assets/images/example-book/ex-book-3.jpg'
+              ],
+              (object) [
+                'title' => 'You Do You',
+                'author' => 'Fellexandro Ruby',
+                'genre' => 'Edukasi, Self Awareness',
+                'date' => 'Desember 2020',
+                'isbn' => '978-6-02064-935-1',
+                'img' => 'assets/images/example-book/ex-book-4.jpg'
+              ],
+              (object) [
+                'title' => 'Insecurity is My Middle Name',
+                'author' => 'Alvi Syahrin',
+                'genre' => 'Edukasi, Self Help',
+                'date' => 'Mei 2021',
+                'isbn' => '978-6-23970-020-1',
+                'img' => 'assets/images/example-book/ex-book-5.jpg'
               ],
             );
 
@@ -66,9 +82,10 @@
               $(".owl-carousel").owlCarousel({
                 items: 1,
                 loop: true,
+                pause: true,
                 dots: true,
                 autoplay: true,
-                autoplayTimeout: 2000,
+                autoplayTimeout: 5000,
                 autoplayHoverPause: false,
               });
             });
