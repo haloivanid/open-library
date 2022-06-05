@@ -173,10 +173,6 @@
       </div>
     </div>
     <!-- End Modal Example Collections -->
-
-    <!-- Footer script -->
-
-    <!-- End Footer Script -->
 </body>
 
 </html>
