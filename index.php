@@ -17,10 +17,29 @@
   <link rel="stylesheet" href="library/js/owl-carousel/owl.carousel.min.css">
   <link rel="stylesheet" href="library/js/owl-carousel/owl.theme.default.min.css">
   <script src="https://unpkg.com/alpinejs" defer></script>
+
+  <style>
+    [x-cloak] {
+      display: none
+    }
+  </style>
 </head>
 
-<body x-data="{ isOpen: true, modalCollectionOpen: false }">
+<body x-cloack x-data="{ 
+  isOpen: true, 
+  showAlert: false,
+  alertMessage: '',
+  modalCollectionOpen: false,
+  registerModal: false,
+}">
   <!-- This example requires Tailwind CSS v2.0+ -->
+
+  <!-- Alert Component -->
+  <div x-show="showAlert">
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/core/components/alert.php'; ?>
+  </div>
+  <!-- End Alert Component -->
+
   <div class="relative bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div class="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 bg-gradient-to-r from-transparent via-white to-white">
@@ -39,7 +58,7 @@
                 </div>
               </div>
               <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                <a href="#" class="font-medium text-gray-500 hover:text-gray-900 hover:font-bold">About</a>
+                <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="font-medium text-gray-500 hover:text-gray-900 hover:font-bold">About</a>
 
                 <a href="#" class="font-medium text-gray-500 hover:text-gray-900 hover:font-bold">Collections</a>
 
@@ -112,7 +131,7 @@
                   <div class="absolute top-0 right-0 sm:-mr-4 -mr-1 -mt-1 w-4 h-4 rounded-full bg-sky-300 animate-ping"></div>
                   <div class="absolute top-0 right-0 sm:-mr-4 -mr-1 -mt-1 w-4 h-4 rounded-full bg-sky-400 opacity-75"></div>
                 </div>
-                <a href="#" class="mt-3 sm:mt-0 sm:ml-3 w-full flex items-center justify-center px-8 py-3 border border-transparent md:py-4 md:text-lg md:px-10 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 hover:shadow-slate-300 hover:shadow-md"> Be Our Member </a>
+                <a href="#" @click="registerModal = true" class="mt-3 sm:mt-0 sm:ml-3 w-full flex items-center justify-center px-8 py-3 border border-transparent md:py-4 md:text-lg md:px-10 text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 hover:shadow-slate-300 hover:shadow-md"> Be Our Member </a>
               </div>
             </div>
           </div>
@@ -148,36 +167,13 @@
     </ul>
   </footer>
 
+  <!-- Modal Registration -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/register.php'; ?>
+  <!-- End Modal Registration -->
+
   <!-- Modal Example Collections -->
-  <div x-show="modalCollectionOpen" x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <div class="fixed inset-0 bg-gray-200 bg-opacity-75"></div>
-
-    <div class="fixed z-20 inset-0 overflow-y-auto">
-      <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
-        <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform sm:my-8 sm:max-w-lg sm:w-full">
-          <div class="flex flex-row-reverse p-2 -mb-8">
-            <button type="button" @click="modalCollectionOpen = !modalCollectionOpen" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span class="sr-only">Close main menu</span>
-              <!-- Heroicon name: outline/x -->
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/example-collection.php'; ?>
-          <div class="bg-gray-100 px-4 py-3 flex items-center border-t border-gray-200 sm:px-6 text-gray-700 font-light text-lg text-center">
-            <div class="w-50 h-50 text-lime-500 text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-              </svg>
-            </div>
-            To borrow our collection of books, please log in to the member area page or register as a member first.
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Modal Example Collections -->
-
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/example-collection.php'; ?>
+  <!-- End Modal Example Collections -->
 
 </body>
 
