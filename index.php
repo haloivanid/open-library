@@ -60,11 +60,11 @@
               <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
                 <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="font-medium text-gray-500 hover:text-gray-900 hover:font-bold">About</a>
 
-                <a href="#" class="font-medium text-gray-500 hover:text-gray-900 hover:font-bold">Facility</a>
+                <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="font-medium text-gray-500 hover:text-gray-900 hover:font-bold">Facility</a>
 
-                <a href="#" class="font-medium text-gray-500 hover:text-gray-900 hover:font-bold">Pricing</a>
+                <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="font-medium text-gray-500 hover:text-gray-900 hover:font-bold">Pricing</a>
 
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 hover:font-bold">Log in</a>
+                <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="font-medium text-indigo-600 hover:text-indigo-500 hover:font-bold">Log in</a>
               </div>
             </nav>
           </div>
@@ -96,13 +96,13 @@
                 </div>
               </div>
               <div x-show="isOpen" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</a>
+                <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</a>
 
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Facility</a>
+                <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Facility</a>
 
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Pricing</a>
+                <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Pricing</a>
               </div>
-              <a href="#" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"> Log in </a>
+              <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"> Log in </a>
             </div>
           </div>
           <!-- End Top Menu Responsive -->
