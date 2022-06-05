@@ -129,7 +129,11 @@
   </div>
 
   <footer class="p-4 md:flex md:items-center md:justify-between md:p-6 bg-white">
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="#" class="hover:underline">Meidhita Nurwigia Putri</a>. All Rights Reserved.
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      Creted in 2022
+      <a href="#" class="hover:underline">Meidhita Nurwigia Putri</a>.
+      This website build with
+      <a href="https://tailwindui.com" target="_blank" rel="noopener noreferrer" class="hover:underline">Tailwind UI</a>
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
       <li>
@@ -173,6 +177,8 @@
       </div>
     </div>
     <!-- End Modal Example Collections -->
+
+
 </body>
 
 </html>
