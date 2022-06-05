@@ -33,7 +33,7 @@
       );
 
       foreach ($list_books as $book) {
-        echo  '<div class="flex items-start mt-4 bg-white">';
+        echo  '<div class="flex items-center mt-4 bg-white">';
         echo  '<img src="' . $book->img . '" alt="' . $book->title . ' Cover" class="object-contain mx-auto w-60 rounded-lg overflow-hidden">';
         echo  '<div class="flex ml-4 w-60 h-full text-left"><ul>';
         echo  '<li class="font-medium">Judul:</li><li class="font-thin">' . $book->title . '</li>';
