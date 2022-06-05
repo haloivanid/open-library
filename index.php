@@ -31,6 +31,7 @@
   alertMessage: '',
   modalCollectionOpen: false,
   registerModal: false,
+  loginModal: false,
 }">
   <!-- This example requires Tailwind CSS v2.0+ -->
 
@@ -64,7 +65,7 @@
 
                 <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="font-medium text-gray-500 hover:text-gray-900 hover:font-bold">Pricing</a>
 
-                <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="font-medium text-indigo-600 hover:text-indigo-500 hover:font-bold">Log in</a>
+                <a href="#" @click="loginModal = !loginModal" class="font-medium text-indigo-600 hover:text-indigo-500 hover:font-bold">Log in</a>
               </div>
             </nav>
           </div>
@@ -102,7 +103,7 @@
 
                 <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Pricing</a>
               </div>
-              <a href="#" x-init="alertMessage = 'Sorry 😰, you click unavailable service'" @click="showAlert = !showAlert" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"> Log in </a>
+              <a href="#" @click="loginModal = !loginModal" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"> Log in </a>
             </div>
           </div>
           <!-- End Top Menu Responsive -->
@@ -166,6 +167,10 @@
   <!-- Modal Registration -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/register.php'; ?>
   <!-- End Modal Registration -->
+
+  <!-- Modal Login -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/login.php'; ?>
+  <!-- End Modal Login -->
 
   <!-- Modal Example Collections -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/example-collection.php'; ?>
