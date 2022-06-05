@@ -31,7 +31,7 @@
           'img' => 'assets/images/example-book/lima-menara.jpg'
         ],
       );
-
+      
       foreach ($list_books as $book) {
         echo  '<div class="flex items-center mt-4 bg-white">';
         echo  '<img src="' . $book->img . '" alt="' . $book->title . ' Cover" class="object-contain mx-auto w-60 rounded-lg overflow-hidden">';

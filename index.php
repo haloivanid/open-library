@@ -161,7 +161,12 @@
             </button>
           </div>
           <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/example-collection.php'; ?>
-          <div class="bg-gray-100 px-4 py-3 flex items-center border-t border-gray-200 sm:px-6 text-gray-700 font-thin text-lg text-center">
+          <div class="bg-gray-100 px-4 py-3 flex items-center border-t border-gray-200 sm:px-6 text-gray-700 font-light text-lg text-center">
+            <div class="w-50 h-50 text-lime-500 text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
             To borrow our collection of books, please log in to the member area page or register as a member first.
           </div>
         </div>
