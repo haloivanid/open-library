@@ -181,9 +181,6 @@ if ($_SESSION['role'] == "") {
         <div class="container">
           <h2 style="text-align: center;">Daftar Anggota</h2>
           <br>
-          <a href="formtambahanggota.php" class="btn btn-info btn-sm">Tambah Data</a>
-          <br>
-          <br>
           <table>
             <thead>
               <tr>
