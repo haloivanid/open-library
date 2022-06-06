@@ -1,9 +1,11 @@
 <?php
 session_start();
+
 // cek apakah yang mengakses halaman ini sudah login
 if ($_SESSION['role'] == "") {
   header("location:index.php?pesan=gagal");
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +18,8 @@ if ($_SESSION['role'] == "") {
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Importing link style -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/dashboard-head.php'; ?>
+  <link rel="stylesheet" href="assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <style>
     table {
       width: 100%;
@@ -103,7 +107,7 @@ if ($_SESSION['role'] == "") {
             <img src="assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p>Selamat Datang <?php echo $_SESSION['username']; ?> </p>
+            <p>Selamat Datang Admin</p>
             <a href="#">
               <i class="fa fa-circle text-success"></i> Online </a>
           </div>
@@ -148,70 +152,42 @@ if ($_SESSION['role'] == "") {
         </ol>
       </section>
       <!-- Main content -->
-      <section class="content"> <?php include $_SERVER['DOCUMENT_ROOT'] . '/databases/connection.php'; ?> <div class="container">
-          <h2 style="text-align: center;">Daftar Pinjam</h2>
-          <a href="formcetak.php" class="btn btn-info btn-sm">Cetak Data</a>
-          <br>
-          <table>
-            <tr>
-              <th width="10%">Nomer</th>
-              <th width="30%">Judul</th>
-              <th width="20%">Pengarang</th>
-              <th width="20%">Penerbit</th>
-              <th width="10%">Tahun</th>
-              <th width="10%">Baca</th>
-            </tr> <?php
-                  $batas = 10;
-                  $halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
-                  $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
+      <section class="content">
+        <section class="content">
+          <?php
+          include $_SERVER['DOCUMENT_ROOT'] . '/databases/connection.php';
+          $no_buku = $_GET['no_buku'];
+          $sql = "select * from buku where no_buku=$no_buku";
 
-                  $previous = $halaman - 1;
-                  $next = $halaman + 1;
-
-                  $data = mysqli_query($koneksi, "select * from pinjam");
-                  $jumlah_data = mysqli_num_rows($data);
-                  $total_halaman = ceil($jumlah_data / $batas);
-
-                  $data = mysqli_query($koneksi, "select * from pinjam where username =  '" . $_SESSION['username'] . "'");
-                  while ($d = mysqli_fetch_array($data)) {
-                  ?> <tr>
-                <td> <?php echo $d['no_buku']; ?> </td>
-                <td> <?php echo $d['judul']; ?> </td>
-                <td> <?php echo $d['pengarang']; ?> </td>
-                <td> <?php echo $d['penerbit']; ?> </td>
-                <td> <?php echo $d['tgl_pinjam']; ?> </td>
-                <td>
-                  <a href="buku/ <?php echo $d['upload'] ?>"> <?php echo $d['upload'] ?> </a>
-                </td> <?php
-                    }
-                      ?>
-          </table>
-        </div>
-        <center>
-          <nav>
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" <?php if ($halaman > 1) {
-                                        echo "href='?halaman=$previous'";
-                                      } ?>>Previous </a>
-              </li> <?php
-                    for ($x = 1; $x <= $total_halaman; $x++) {
-                    ?> <li class="page-item">
-                  <a class="page-link" href="?halaman=
-                    <?php echo $x ?>"> <?php echo $x; ?>
-                  </a>
-                </li> <?php
-                    }
-                      ?> <li class="page-item">
-                <a class="page-link" <?php if ($halaman < $total_halaman) {
-                                        echo "href='?halaman=$next'";
-                                      } ?>>Next </a>
-              </li>
-            </ul>
-          </nav>
-        </center>
-      </section>
-      <!-- /.content -->
+          $hasil = mysqli_query($koneksi, $sql);
+          $data = mysqli_fetch_assoc($hasil);
+          ?>
+          <form action="simpanpinjambuku.php" method="post">
+            <input type="hidden" name="no_buku" value="
+																								<?php echo $no_buku; ?>" />
+            <label>Username </label>
+            <input type="text" readonly="readonly" name="username" value="
+																									<?php echo $_SESSION['username']; ?>" class="form-control" placeholder="Masukan judul" />
+            <label>Judul </label>
+            <input type="text" readonly="readonly" name="judul" value="
+																										<?php echo $data['judul']; ?>" class="form-control" placeholder="Masukan judul" />
+            <label>Pengarang</label>
+            <input type="text" readonly="readonly" name="pengarang" value="
+																											<?php echo $data['pengarang']; ?>" class="form-control" placeholder="Masukan pengarang" />
+            <label>Penerbit</label>
+            <input type="text" readonly="readonly" name="penerbit" value="
+																												<?php echo $data['penerbit']; ?>" class="form-control" placeholder="Masukan penerbit" />
+            <label>Tanggal Pinjam</label>
+            <input type="text" readonly="readonly" name="tgl_pinjam" class="form-control" value="
+																													<?php $tgl = date('Y-m-d');
+                                                          echo $tgl; ?>" />
+            <input type="hidden" name="upload" value="
+																														<?php echo $data['upload']; ?>" class="form-control" placeholder="Masukan penerbit" />
+            <br>
+            <button type="submit" class="btn btn-primary">Pinjam</button>
+          </form>
+        </section>
+        <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
