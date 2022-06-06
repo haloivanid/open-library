@@ -3,7 +3,7 @@ session_start();
 
 // cek apakah yang mengakses halaman ini sudah login
 if ($_SESSION['role'] == "") {
-  header("location:index.php?pesan=gagal");
+  header("Location: http://" . $_SERVER['HTTP_HOST']);
 }
 ?>
 <!DOCTYPE html>

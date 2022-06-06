@@ -18,5 +18,5 @@ $tahun_terbit=$_POST["tahun_terbit"];
       where no_buku=$no_buku";
       $hasil=mysqli_query($koneksi,$sql);
 
-      //apabila berhasil maka halaman akan di redirect ke buku.php	
-      header("Location:buku.php");
+  //apabila berhasil maka halaman akan di redirect ke buku.php	
+  header("Location: http://" . $_SERVER['HTTP_HOST'] . "/core/pages/admin/books.php");
