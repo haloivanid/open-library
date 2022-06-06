@@ -14,10 +14,10 @@
         </div>
         <div class="items-center bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <div class="mt-4 sm:mt-0 sm:ml-4">
-            <h3 class="text-center text-lg leading-6 font-medium text-gray-900" id="modal-title">Logging in</h3>
+            <h3 class="text-center text-lg leading-6 font-medium text-gray-900" id="modal-title">Logging in to your account</h3>
           </div>
         </div>
-        <form class="mt-8 mb-8 space-y-6" action="#" method="POST">
+        <form class="mt-8 mb-8 space-y-6" action="/core/services/user-login.php" method="POST">
           <div class="flex flex-col shadow-sm mx-8 space-y-8 ">
             <div>
               <label for="username" class="sr-only">Username</label>
@@ -35,6 +35,14 @@
             </button>
           </div>
         </form>
+        <div class="bg-gray-100 px-4 py-3 flex items-center border-t border-gray-200 sm:px-6 text-gray-700 font-light text-base">
+          <div class="w-50 h-50 text-yellow-400 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <span class="mr-4 ml-8 text-center">Please, do not share your credential even our staff.</span>
+        </div>
       </div>
     </div>
   </div>

@@ -28,6 +28,7 @@
 <body x-cloack x-data="{ 
   isOpen: true, 
   showAlert: false,
+  alertLogin: true,
   alertMessage: '',
   modalCollectionOpen: false,
   registerModal: false,
@@ -37,9 +38,19 @@
 
   <!-- Alert Component -->
   <div x-show="showAlert">
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/core/components/alert.php'; ?>
+    <?php
+    $element = require $_SERVER['DOCUMENT_ROOT'] . '/core/components/alert.php';
+    echo $element;
+    ?>
   </div>
   <!-- End Alert Component -->
+  <?php
+  if (isset($_GET['pesan'])) {
+    if ($_GET['pesan'] == "gagal") {
+      echo require $_SERVER['DOCUMENT_ROOT'] . '/core/components/login-alert.php';
+    }
+  }
+  ?>
 
   <div class="relative bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto">
