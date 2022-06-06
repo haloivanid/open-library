@@ -33,7 +33,7 @@ if($cek > 0){
     $_SESSION['username'] = $username;
     $_SESSION['role'] = "2";
     // alihkan ke halaman dashboard pegawai
-    header("location:user.php");
+    header("Location: http://" . $_SERVER['HTTP_HOST'] . "/core/pages/user/index.php");
 
   }else{
     // alihkan ke halaman login kembali
