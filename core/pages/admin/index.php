@@ -58,7 +58,7 @@ if ($_SESSION['role'] == "") {
             </li>
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
-              <a href="logout.php">
+              <a href="/core/services/logout.php">
                 <i class="fa fa-sign-out"></i>
                 <span>Logout</span>
                 <ul class="dropdown-menu">
@@ -146,7 +146,7 @@ if ($_SESSION['role'] == "") {
                   <i class="fa fa-refresh"></i> Peminjaman </a>
               </li>
               <li>
-                <a href="logout.php">
+                <a href="/core/services/logout.php">
                   <i class="fa fa-sign-out"></i> Logout </a>
               </li>
             </ul>
@@ -175,7 +175,7 @@ if ($_SESSION['role'] == "") {
         <p>Halo <b> <?php echo $_SESSION['username']; ?> </b> Anda telah login sebagai <b> <?php echo 'admin'; ?> </b>. </p>
         <br />
         <br />
-        <a href="logout.php">LOGOUT</a>
+        <a href="/core/services/logout.php">LOGOUT</a>
         <br />
         <br />
       </section>
