@@ -16,16 +16,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="library/js/owl-carousel/owl.carousel.min.css">
   <link rel="stylesheet" href="library/js/owl-carousel/owl.theme.default.min.css">
-  <script src="https://unpkg.com/alpinejs" defer></script>
-
   <style>
     [x-cloak] {
       display: none !important;
     }
   </style>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
 </head>
 
-<body x-cloack x-data="{ 
+<body x-data="{ 
   isOpen: true, 
   showAlert: false,
   alertLogin: true,
@@ -33,17 +33,8 @@
   modalCollectionOpen: false,
   registerModal: false,
   loginModal: false,
-}">
+}" x-cloak>
   <!-- This example requires Tailwind CSS v2.0+ -->
-
-  <!-- Alert Component -->
-  <div x-show="showAlert">
-    <?php
-    $element = require $_SERVER['DOCUMENT_ROOT'] . '/core/components/alert.php';
-    echo $element;
-    ?>
-  </div>
-  <!-- End Alert Component -->
   <?php
   if (isset($_GET['pesan'])) {
     if ($_GET['pesan'] == "gagal") {
@@ -175,16 +166,31 @@
     </ul>
   </footer>
 
+  <!-- Alert Component -->
+  <div x-show="showAlert" x-cloack>
+    <?php
+    $element = require $_SERVER['DOCUMENT_ROOT'] . '/core/components/alert.php';
+    echo $element;
+    ?>
+  </div>
+  <!-- End Alert Component -->
+
   <!-- Modal Registration -->
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/register.php'; ?>
+  <div x-cloack>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/register.php'; ?>
+  </div>
   <!-- End Modal Registration -->
 
   <!-- Modal Login -->
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/login.php'; ?>
+  <div x-cloack>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/login.php'; ?>
+  </div>
   <!-- End Modal Login -->
 
   <!-- Modal Example Collections -->
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/example-collection.php'; ?>
+  <div x-cloack>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/example-collection.php'; ?>
+  </div>
   <!-- End Modal Example Collections -->
 
 </body>
