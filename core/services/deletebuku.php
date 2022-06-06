@@ -1,6 +1,6 @@
-<?php 
+<?php
 // koneksi database
-include 'koneksi.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/databases/connection.php';
  // menangkap data no_buku yang di kirim dari url
 $no_buku = $_GET['no_buku'];
 // menghapus data dari database

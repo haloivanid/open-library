@@ -44,7 +44,7 @@ if ($_SESSION['role'] == "") {
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-  <?php include 'koneksi.php'; ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/databases/connection.php'; ?>
   <div class="container">
     <h2 style="text-align: center;">Daftar Pinjam</h2>
     <br>
