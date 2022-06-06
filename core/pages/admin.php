@@ -16,26 +16,8 @@ if ($_SESSION['role'] == "") {
   <title>Admin | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="/library/bower-components/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="/library/bower-components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="/library/bower-components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/library/admin-lte/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="/library/admin-lte/css/skins/_all-skins.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="/library/bower-components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="/library/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="/library/bower-components/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/library/bower-components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="/library/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- Importing link style -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/dashboard-head.php'; ?>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -368,35 +350,7 @@ if ($_SESSION['role'] == "") {
   <script>
     $.widget.bridge('uibutton', $.ui.button);
   </script>
-  <!-- Bootstrap 3.3.7 -->
-  <script src="/library/bower-components/bootstrap/js/bootstrap.min.js"></script>
-  <!-- Sparkline -->
-  <script src="/library/js/jquery.sparkline.min.js"></script>
-  <!-- jvectormap -->
-  <script src="/library/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="/library/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-  <!-- jQuery Knob Chart -->
-  <script src="/library/js/jquery.knob.min.js"></script>
-  <!-- Morris.js charts -->
-  <script src="/library/bower-components/raphael/raphael.min.js"></script>
-  <script src="/library/bower-components/morris.js/morris.min.js"></script>
-  <!-- daterangepicker -->
-  <script src="/library/moment/moment.min.js"></script>
-  <script src="/library/bower-components/bootstrap-daterangepicker/daterangepicker.js"></script>
-  <!-- datepicker -->
-  <script src="/library/bower-components/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <!-- Bootstrap WYSIHTML5 -->
-  <script src="/library/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-  <!-- Slimscroll -->
-  <script src="/library/js/jquery.slimscroll.min.js"></script>
-  <!-- FastClick -->
-  <script src="/library/js/fastclick.js"></script>
-  <!-- AdminLTE App -->
-  <script src="/library/admin-lte/js/adminlte.min.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="/library/admin-lte/js/pages/dashboard.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="/library/admin-lte/js/demo.js"></script>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/dashboard-footer-script.php'; ?>
 </body>
 
 </html>

@@ -16,26 +16,8 @@ if ($_SESSION['role'] == "") {
   <title>Admin | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="/library/bower-components/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="/library/bower-components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="/library/bower-components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/library/admin-lte/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="/library/admin-lte/css/skins/_all-skins.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="/library/bower-components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="/library/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="/library/bower-components/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/library/bower-components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="/library/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- Importing link style -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/core/components/dashboard-head.php'; ?>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -194,7 +176,9 @@ if ($_SESSION['role'] == "") {
         </ol>
       </section>
       <!-- Main content -->
-      <section class="content"> <?php include $_SERVER['DOCUMENT_ROOT'] . '/databases/connection.php'; ?> <div class="container">
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/databases/connection.php'; ?>
+      <section class="content">
+        <div class="container">
           <h2 style="text-align: center;">Daftar Anggota</h2>
           <br>
           <a href="formtambahanggota.php" class="btn btn-info btn-sm">Tambah Data</a>
@@ -238,7 +222,7 @@ if ($_SESSION['role'] == "") {
                   <td> <?php echo $d['role']; ?> </td>
                   <td>
                     <a href="updateanggota.php?no_anggota=
-                  <?php echo $d['no_anggota']; ?>">Update | <a href="deleteanggota.php?no_anggota=
+                    <?php echo $d['no_anggota']; ?>">Update | <a href="deleteanggota.php?no_anggota=
                   <?php echo $d['no_anggota']; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')">| Delete
                   </td>
                 </tr>
