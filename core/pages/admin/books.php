@@ -216,7 +216,7 @@ if ($_SESSION['role'] == "") {
                     }
                   }
                       ?> <br>
-          <a href="formtambahbuku.php" class="btn btn-info btn-sm">Tambah Data</a>
+          <a href="/core/services/tambahbuku.php" class="btn btn-info btn-sm">Tambah Data</a>
           <br>
           <br>
           <table>

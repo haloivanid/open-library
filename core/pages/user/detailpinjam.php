@@ -162,7 +162,7 @@ if ($_SESSION['role'] == "") {
           $hasil = mysqli_query($koneksi, $sql);
           $data = mysqli_fetch_assoc($hasil);
           ?>
-          <form action="simpanpinjambuku.php" method="post">
+          <form action="/core/services/simpanpinjambuku.php" method="post">
             <input type="hidden" name="no_buku" value="
 																								<?php echo $no_buku; ?>" />
             <label>Username </label>
