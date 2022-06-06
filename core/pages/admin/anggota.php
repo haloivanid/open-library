@@ -219,7 +219,7 @@ if ($_SESSION['role'] == "") {
                   <td> <?php echo $d['role']; ?> </td>
                   <td>
                     <a href="updateanggota.php?no_anggota=
-                    <?php echo $d['no_anggota']; ?>">Update | <a href="deleteanggota.php?no_anggota=
+                    <?php echo $d['no_anggota']; ?>">Update | <a href="/core/services/deleteanggota.php?no_anggota=
                   <?php echo $d['no_anggota']; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')">| Delete
                   </td>
                 </tr>
@@ -238,8 +238,8 @@ if ($_SESSION['role'] == "") {
                     for ($x = 1; $x <= $total_halaman; $x++) {
                     ?> <li class="page-item">
                   <a class="page-link" href="?halaman=
-																															
-																															<?php echo $x ?>"> <?php echo $x; ?> </a>
+                    <?php echo $x ?>"> <?php echo $x; ?>
+                  </a>
                 </li> <?php
                     }
                       ?> <li class="page-item">
