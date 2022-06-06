@@ -44,6 +44,30 @@ if ($_SESSION['role'] == "") {
     <![endif]-->
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    table {
+      width: 100%;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+    }
+
+    th {
+      padding: 8px;
+      text-align: left;
+      border-top: 1px solid #605ca8;
+      border-bottom: 1px solid #605ca8;
+    }
+
+    td {
+      padding: 8px;
+      text-align: left;
+      border-top: 1px solid #dee2e6;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
 
 <body class="hold-transition skin-purple sidebar-mini">
@@ -111,7 +135,7 @@ if ($_SESSION['role'] == "") {
             <img src="/library/admin-lte/img/avatar.png" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p>Selamat Datang, Admin</p>
+            <p>Selamat Datang, Mei</p>
             <a href="#">
               <i class="fa fa-circle text-success"></i> Online </a>
           </div>
@@ -188,14 +212,106 @@ if ($_SESSION['role'] == "") {
         </ol>
       </section>
       <!-- Main content -->
-      <section class="content">
-        <h1>Halaman Admin</h1>
-        <p>Halo <b> <?php echo $_SESSION['username']; ?> </b> Anda telah login sebagai <b> <?php echo 'admin'; ?> </b>. </p>
-        <br />
-        <br />
-        <a href="logout.php">LOGOUT</a>
-        <br />
-        <br />
+      <section class="content"> <?php include $_SERVER['DOCUMENT_ROOT'] . '/databases/connection.php'; ?> <div class="container">
+          <h2 style="text-align: center;">Daftar Buku</h2>
+          <br> <?php
+                if (isset($_GET['alert'])) {
+                  if ($_GET['alert'] == 'gagal_ekstensi') {
+                ?> <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4>
+                  <i class="icon fa fa-warning"></i> Peringatan !
+                </h4> Ekstensi Tidak Diperbolehkan
+              </div> <?php
+                    } elseif ($_GET['alert'] == "gagal_ukuran") {
+                      ?> <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4>
+                  <i class="icon fa fa-check"></i> Peringatan !
+                </h4> Ukuran File terlalu Besar
+              </div> <?php
+                    } elseif ($_GET['alert'] == "berhasil") {
+                      ?> <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4>
+                  <i class="icon fa fa-check"></i> Success
+                </h4> Berhasil Disimpan
+              </div> <?php
+                    }
+                  }
+                      ?> <br>
+          <a href="formtambahbuku.php" class="btn btn-info btn-sm">Tambah Data</a>
+          <br>
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th width="2%">Nomer</th>
+                <th width="25%">Judul</th>
+                <th width="10%">Pengarang</th>
+                <th width="20%">Penerbit</th>
+                <th width="10%">Tahun</th>
+                <th width="15%">File</th>
+                <th width="10%">Aksi</th>
+              </tr>
+            </thead>
+            <?php
+
+            $batas = 9;
+            $halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
+            $halaman_awal = ($halaman > 1) ? ($halaman * $batas) - $batas : 0;
+
+            $previous = $halaman - 1;
+            $next = $halaman + 1;
+
+            $data = mysqli_query($koneksi, "select * from buku");
+            $jumlah_data = mysqli_num_rows($data);
+            $total_halaman = ceil($jumlah_data / $batas);
+
+            $data = mysqli_query($koneksi, "select * from buku limit $halaman_awal, $batas");
+            while ($d = mysqli_fetch_array($data)) {
+            ?> <tr>
+                <td> <?php echo $d['no_buku']; ?> </td>
+                <td> <?php echo $d['judul']; ?> </td>
+                <td> <?php echo $d['pengarang']; ?> </td>
+                <td> <?php echo $d['penerbit']; ?> </td>
+                <td> <?php echo $d['tahun_terbit']; ?> </td>
+                <td>
+                  <a href="buku/ 
+																														<?php echo $d['upload'] ?>"> <?php echo $d['upload'] ?> </a>
+                </td>
+                <td>
+                  <a href="updatebuku.php?no_buku=
+																														<?php echo $d['no_buku']; ?>">Update | <a href="deletebuku.php?no_buku=
+																															<?php echo $d['no_buku']; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')"> Delete
+                </td>
+              </tr> <?php
+                  }
+                    ?>
+          </table>
+        </div>
+        <center>
+          <nav>
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" <?php if ($halaman > 1) {
+                                        echo "href='?halaman=$previous'";
+                                      } ?>>Previous </a>
+              </li> <?php
+                    for ($x = 1; $x <= $total_halaman; $x++) {
+                    ?> <li class="page-item">
+                  <a class="page-link" href="?halaman=
+																																<?php echo $x ?>"> <?php echo $x; ?> </a>
+                </li> <?php
+                    }
+                      ?> <li class="page-item">
+                <a class="page-link" <?php if ($halaman < $total_halaman) {
+                                        echo "href='?halaman=$next'";
+                                      } ?>>Next </a>
+              </li>
+            </ul>
+          </nav>
+        </center>
       </section>
       <!-- /.content -->
     </div>

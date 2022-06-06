@@ -54,8 +54,8 @@ if ($_SESSION['role'] == "") {
     th {
       padding: 8px;
       text-align: left;
-      border-top: 1px solid #33FFA4;
-      border-bottom: 1px solid #33FFA4;
+      border-top: 1px solid #605ca8;
+      border-bottom: 1px solid #605ca8;
     }
 
     td {
@@ -77,7 +77,8 @@ if ($_SESSION['role'] == "") {
       <a href="index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
-          <b>A</b>LT </span>
+          <b>D</b>Lib
+        </span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg">
           <b>Digi</b>Lib
@@ -151,7 +152,7 @@ if ($_SESSION['role'] == "") {
                   <i class="fa fa-user"></i> Anggota </a>
               </li>
               <li>
-                <a href="buku.php">
+                <a href="books.php">
                   <i class="fa fa-book"></i> Buku </a>
               </li>
             </ul>
@@ -202,7 +203,7 @@ if ($_SESSION['role'] == "") {
           <table>
             <thead>
               <tr>
-                <th width="10%">Nomer</th>
+                <th width="2%">Nomer</th>
                 <th width="15%">Nama</th>
                 <th width="15%">Alamat</th>
                 <th width="15%">Email</th>
