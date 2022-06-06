@@ -25,7 +25,7 @@ if($cek > 0){
     $_SESSION['username'] = $username;
     $_SESSION['role'] = "1";
     // alihkan ke halaman dashboard admin
-    header("Location: http://" . $_SERVER['HTTP_HOST'] . "/core/pages/admin.php");
+    header("Location: http://" . $_SERVER['HTTP_HOST'] . "/core/pages/admin/index.php");
 
   // cek jika user login sebagai pegawai
   }else if($data['role']=="2"){
