@@ -36,8 +36,8 @@
 }" x-cloak>
   <!-- This example requires Tailwind CSS v2.0+ -->
   <?php
-  if (isset($_GET['pesan'])) {
-    if ($_GET['pesan'] == "gagal") {
+  if (isset($_GET['login'])) {
+    if ($_GET['login'] == "failed") {
       echo require $_SERVER['DOCUMENT_ROOT'] . '/core/components/login-alert.php';
     }
   }

@@ -37,9 +37,9 @@ if($cek > 0){
 
   }else{
     // alihkan ke halaman login kembali
-    header("Location: http://" . $_SERVER['HTTP_HOST'] . "?pesan=gagal");
+    header("Location: http://" . $_SERVER['HTTP_HOST'] . "?login=failed");
   }
 
 }else{
-  header("Location: http://" . $_SERVER['HTTP_HOST'] . "?pesan=gagal");
+  header("Location: http://" . $_SERVER['HTTP_HOST'] . "?login=failed");
 }
