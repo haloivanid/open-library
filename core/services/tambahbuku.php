@@ -25,11 +25,11 @@ if ($upload != "") {
     } else {
       //tampil alert dan akan redirect ke halaman index.php
       //silahkan ganti index.php sesuai halaman yang akan dituju
-      echo "<script>alert('Data berhasil ditambah.');window.location='buku.php';</script>";
+      echo "<script>alert('Data berhasil ditambah.');window.location='/core/pages/admin/books.php';</script>";
     }
   } else {
     //jika file ekstensi .pdf maka alert ini yang tampil
-    echo "<script>alert('Ekstensi yang boleh hanya pdf atau png.');window.location='buku.php';</script>";
+    echo "<script>alert('Ekstensi yang boleh hanya pdf atau png.');window.location='/core/pages/admin/books.php';</script>";
   }
 } else {
   $query = "INSERT INTO buku (no_buku, judul, pengarang, penerbit, tahun_terbit, upload) VALUES ('$nomer', '$judul', '$pengarang', '$penerbit', '$terbit',NULL)";
@@ -41,6 +41,6 @@ if ($upload != "") {
   } else {
     //tampil alert dan akan redirect ke halaman index.php
     //silahkan ganti index.php sesuai halaman yang akan dituju
-    echo "<script>alert('Data berhasil ditambah.');window.location='buku.php';</script>";
+    echo "<script>alert('Data berhasil ditambah.');window.location='/core/pages/admin/books.php';</script>";
   }
 }
