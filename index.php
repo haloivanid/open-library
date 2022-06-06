@@ -29,6 +29,7 @@
   isOpen: true, 
   showAlert: false,
   alertLogin: true,
+  alertRegister: true,
   alertMessage: '',
   modalCollectionOpen: false,
   registerModal: false,
@@ -39,6 +40,11 @@
   if (isset($_GET['login'])) {
     if ($_GET['login'] == "failed") {
       echo require $_SERVER['DOCUMENT_ROOT'] . '/core/components/login-alert.php';
+    }
+  }
+  if (isset($_GET['register'])) {
+    if ($_GET['register'] == "success") {
+      echo require $_SERVER['DOCUMENT_ROOT'] . '/core/components/register-alert.php';
     }
   }
   ?>

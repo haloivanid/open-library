@@ -17,11 +17,15 @@
             <h3 class="text-center text-lg leading-6 font-medium text-gray-900" id="modal-title">Form Registration</h3>
           </div>
         </div>
-        <form class="mt-8 mb-8 space-y-6" action="#" method="POST">
+        <form class="mt-8 mb-8 space-y-6" action="/core/services/user-register.php" method="POST">
           <div class="flex flex-col shadow-sm mx-8 space-y-8 ">
             <div>
+              <label for="fullname" class="sr-only">Full Name</label>
+              <input required id="fullname" name="fullname" type="text" autocomplete="name" class="appearance-none rounded-lg relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Full Name">
+            </div>
+            <div>
               <label for="username" class="sr-only">Username</label>
-              <input required id="username" name="username" type="text" autocomplete="off" class="appearance-none rounded-lg relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
+              <input required id="username-register" name="username" type="text" autocomplete="off" class="appearance-none rounded-lg relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
             </div>
             <div>
               <label for="email-address" class="sr-only">Email address</label>
@@ -29,7 +33,7 @@
             </div>
             <div>
               <label for="password" class="sr-only">Password</label>
-              <input required id="password" name="password" type="password" autocomplete="current-password" class="appearance-none rounded-lg relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+              <input required id="password-register" name="password" type="password" autocomplete="current-password" class="appearance-none rounded-lg relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
             </div>
             <div>
               <label for="address" class="sr-only">Address</label>
