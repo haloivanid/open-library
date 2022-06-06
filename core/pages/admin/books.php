@@ -258,7 +258,7 @@ if ($_SESSION['role'] == "") {
                 </td>
                 <td>
                   <a href="updatebuku.php?no_buku=
-																														<?php echo $d['no_buku']; ?>">Update | <a href="deletebuku.php?no_buku=
+																														<?php echo $d['no_buku']; ?>">Update | <a href="/core/services/deletebuku.php?no_buku=
 																															<?php echo $d['no_buku']; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')"> Delete
                 </td>
               </tr> <?php
