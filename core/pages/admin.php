@@ -46,7 +46,7 @@ if ($_SESSION['role'] == "") {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition skin-green sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini">
   <div class="wrapper">
     <header class="main-header">
       <!-- Logo -->
@@ -56,7 +56,8 @@ if ($_SESSION['role'] == "") {
           <b>A</b>LT </span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg">
-          <b>Admin</b>LTE </span>
+          <b>Digi</b>Lib
+        </span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -106,7 +107,7 @@ if ($_SESSION['role'] == "") {
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="/library/admin-lte/img/logo.jpg" class="img-circle" alt="User Image">
+            <img src="/library/admin-lte/img/avatar.png" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p>Selamat Datang, Admin</p>
