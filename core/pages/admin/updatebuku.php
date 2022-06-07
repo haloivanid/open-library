@@ -164,19 +164,14 @@ if ($_SESSION['role'] == "") {
                                 ?> <h2>Update Data Buku</h2>
           <form action="/core/services/simpanupdatebuku.php" method="post">
             <label>Judul</label>
-            <input type="text" name="judul" value="
-																								<?php echo $data['judul']; ?>" class="form-control" placeholder="Masukan judul" />
+            <input type="text" name="judul" value="<?php echo $data['judul']; ?>" class="form-control" placeholder="Masukan judul" />
             <label>Pengarang</label>
-            <input type="text" name="pengarang" value="
-																									<?php echo $data['pengarang']; ?>" class="form-control" placeholder="Masukan pengarang" />
+            <input type="text" name="pengarang" value="<?php echo $data['pengarang']; ?>" class="form-control" placeholder="Masukan pengarang" />
             <label>Penerbit</label>
-            <input type="text" name="penerbit" value="
-																										<?php echo $data['penerbit']; ?>" class="form-control" placeholder="Masukan penerbit" />
+            <input type="text" name="penerbit" value="<?php echo $data['penerbit']; ?>" class="form-control" placeholder="Masukan penerbit" />
             <label>Tahun</label>
-            <input type="text" name="tahun_terbit" value="
-																											<?php echo $data['tahun_terbit']; ?>" class="form-control" placeholder="Masukan tahun" />
-            <input type="hidden" name="no_buku" value="
-																												<?php echo $no_buku; ?>" />
+            <input type="text" name="tahun_terbit" value="<?php echo $data['tahun_terbit']; ?>" class="form-control" placeholder="Masukan tahun" />
+            <input type="hidden" name="no_buku" value="<?php echo $no_buku; ?>" />
             <button type="submit" class="btn btn-primary">Update</button>
           </form>
         </div>

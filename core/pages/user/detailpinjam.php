@@ -163,27 +163,18 @@ if ($_SESSION['role'] == "") {
           $data = mysqli_fetch_assoc($hasil);
           ?>
           <form action="/core/services/simpanpinjambuku.php" method="post">
-            <input type="hidden" name="no_buku" value="
-              <?php echo $no_buku; ?>" />
+            <input type="hidden" name="no_buku" value=" <?php echo $no_buku; ?>" />
             <label>Username </label>
-            <input type="text" readonly="readonly" name="username" value="
-              <?php echo $_SESSION['username']; ?>" class="form-control" placeholder="Masukan judul" />
+            <input type="text" readonly="readonly" name="username" value="<?php echo $_SESSION['username']; ?>" class="form-control" placeholder="Masukan judul" />
             <label>Judul </label>
-            <input type="text" readonly="readonly" name="judul" value="
-              <?php echo $data['judul']; ?>" class="form-control" placeholder="Masukan judul" />
+            <input type="text" readonly="readonly" name="judul" value="<?php echo $data['judul']; ?>" class="form-control" placeholder="Masukan judul" />
             <label>Pengarang</label>
-            <input type="text" readonly="readonly" name="pengarang" value="
-              <?php echo $data['pengarang']; ?>" class="form-control" placeholder="Masukan pengarang" />
+            <input type="text" readonly="readonly" name="pengarang" value="<?php echo $data['pengarang']; ?>" class="form-control" placeholder="Masukan pengarang" />
             <label>Penerbit</label>
-            <input type="text" readonly="readonly" name="penerbit" value="
-              <?php echo $data['penerbit']; ?>" class="form-control" placeholder="Masukan penerbit" />
+            <input type="text" readonly="readonly" name="penerbit" value="<?php echo $data['penerbit']; ?>" class="form-control" placeholder="Masukan penerbit" />
             <label>Tanggal Pinjam</label>
-            <input type="text" readonly="readonly" name="tgl_pinjam" class="form-control" value="
-              <?php $tgl = date('Y-m-d');
-                echo $tgl; ?>" 
-              />
-            <input type="hidden" name="upload" value="
-              <?php echo $data['upload']; ?>" class="form-control" placeholder="Masukan penerbit" />
+            <input type="text" readonly="readonly" name="tgl_pinjam" class="form-control" value="<?php $tgl = date('Y-m-d');echo $tgl; ?>"/>
+            <input type="hidden" name="upload" value="<?php echo $data['upload']; ?>" class="form-control" placeholder="Masukan penerbit" />
             <br>
             <button type="submit" class="btn btn-primary">Pinjam</button>
           </form>
