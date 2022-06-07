@@ -9,8 +9,9 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $address = $_POST['address'];
 
-$users = mysqli_query($koneksi, "SELECT * from anggota");
-$new_id = mysqli_num_rows($users) + 1;
+$result = mysqli_query($koneksi, "SELECT MAX(no_anggota) from anggota");
+$max_id = mysqli_fetch_array($result);
+$new_id = $max_id['MAX(no_anggota)'] + 1;
 
 $result = mysqli_query(
   $koneksi,
