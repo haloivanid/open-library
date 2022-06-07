@@ -249,13 +249,11 @@ if ($_SESSION['role'] == "") {
                 <td> <?php echo $d['penerbit']; ?> </td>
                 <td> <?php echo $d['tahun_terbit']; ?> </td>
                 <td>
-                  <a href="buku/ 
-																														<?php echo $d['upload'] ?>"> <?php echo $d['upload'] ?> </a>
+                  <a href="/assets/files/buku/<?php echo $d['upload'] ?>"><?php echo $d['upload'] ?></a>
                 </td>
                 <td>
-                  <a href="updatebuku.php?no_buku=
-																														<?php echo $d['no_buku']; ?>">Update | <a href="/core/services/deletebuku.php?no_buku=
-																															<?php echo $d['no_buku']; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')"> Delete
+                  <a href="updatebuku.php?no_buku=<?php echo $d['no_buku']; ?>">Update | 
+                  <a href="/core/services/deletebuku.php?no_buku=<?php echo $d['no_buku']; ?>" onclick="javascript: return confirm('Anda yakin akan hapus data?')"> Delete
                 </td>
               </tr> <?php
                   }

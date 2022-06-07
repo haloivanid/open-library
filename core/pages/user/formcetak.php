@@ -78,7 +78,7 @@ if ($_SESSION['role'] == "") {
           <td><?php echo $d['pengarang']; ?></td>
           <td><?php echo $d['penerbit']; ?></td>
           <td><?php echo $d['tgl_pinjam']; ?></td>
-          <td><a href="buku/<?php echo $d['upload'] ?>"><?php echo $d['upload'] ?></a></td>
+          <td><a href="/assets/files/buku/<?php echo $d['upload'] ?>"><?php echo $d['upload'] ?></a></td>
         <?php
       }
         ?>

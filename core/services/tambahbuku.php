@@ -14,7 +14,7 @@ if ($upload != "") {
   $file_tmp = $_FILES['upload']['tmp_name'];
   $upload_baru = $upload; //menggabungkan angka acak dengan nama file sebenarnya
   if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
-    move_uploaded_file($file_tmp, 'buku/' . $upload_baru); //memindah file gambar ke folder gambar
+    move_uploaded_file($file_tmp, '/assets/files/buku' . $upload_baru); //memindah file gambar ke folder gambar
     // jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
     $query = "INSERT INTO buku (no_buku, judul, pengarang, penerbit, tahun_terbit, upload) VALUES ('$nomer', '$judul', '$pengarang', '$penerbit', '$terbit','$upload')";
     $result = mysqli_query($koneksi, $query);
