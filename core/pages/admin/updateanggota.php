@@ -147,25 +147,18 @@ if ($_SESSION['role'] == "") {
                                 ?> <h2>Update Data Anggota</h2>
           <form action="/core/services/simpanupdateanggota.php" method="post">
             <label>Nama</label>
-            <input type="text" name="nama_anggota" value="
-              <?php echo $data['nama_anggota']; ?>" class="form-control" placeholder="Masukan alamat" />
+            <input type="text" name="nama_anggota" value="<?php echo $data['nama_anggota']; ?>" class="form-control" placeholder="Masukan alamat" />
             <label>Alamat</label>
-            <input type="text" name="alamat" value="
-              <?php echo $data['alamat']; ?>" class="form-control" placeholder="Masukan alamat" />
+            <input type="text" name="alamat" value="<?php echo $data['alamat']; ?>" class="form-control" placeholder="Masukan alamat" />
             <label>Email</label>
-            <input type="text" name="email" value="
-              <?php echo $data['email']; ?>" class="form-control" placeholder="Masukan email" />
+            <input type="text" name="email" value="<?php echo $data['email']; ?>" class="form-control" placeholder="Masukan email" />
             <label>username</label>
-            <input type="text" name="username" value="
-              <?php echo $data['username']; ?>" class="form-control" placeholder="Masukan username" />
+            <input type="text" name="username" value="<?php echo $data['username']; ?>" class="form-control" placeholder="Masukan username" />
             <label>Password</label>
-            <input type="text" name="password" value="
-              <?php echo $data['password']; ?>" class="form-control" placeholder="Masukan Password" />
+            <input type="text" name="password" value="<?php echo $data['password']; ?>" class="form-control" placeholder="Masukan Password" />
             <label>Role</label>
-            <input type="text" name="role" value="
-              <?php echo $data['role']; ?>" class="form-control" placeholder="Masukan role" />
-            <input type="hidden" name="no_anggota" value="
-              <?php echo $no_anggota; ?>" />
+            <input type="text" name="role" value="<?php echo $data['role']; ?>" class="form-control" placeholder="Masukan role" />
+            <input type="hidden" name="no_anggota" value="<?php echo $no_anggota; ?>" />
             <button type="submit" class="btn btn-primary">Update</button>
           </form>
         </div>
