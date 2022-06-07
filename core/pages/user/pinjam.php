@@ -101,7 +101,7 @@ if ($_SESSION['role'] == "") {
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <img src="/library/admin-lte/img/avatar2.jpg" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p>Selamat Datang <?php echo $_SESSION['username']; ?> </p>
