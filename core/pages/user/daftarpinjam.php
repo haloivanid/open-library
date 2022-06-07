@@ -46,7 +46,7 @@ if ($_SESSION['role'] == "") {
   <div class="wrapper">
     <header class="main-header">
       <!-- Logo -->
-      <a href="index2.html" class="logo">
+      <a href="index.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
           <b>D</b>Lib
@@ -169,7 +169,7 @@ if ($_SESSION['role'] == "") {
                   $next = $halaman + 1;
 
                   $data =
-                  mysqli_query($koneksi, "select * from pinjam where username =  '" . $_SESSION['username'] . "'");
+                    mysqli_query($koneksi, "select * from pinjam where username =  '" . $_SESSION['username'] . "'");
                   $jumlah_data = mysqli_num_rows($data);
                   $total_halaman = ceil($jumlah_data / $batas);
 

@@ -50,7 +50,7 @@ if ($_SESSION['role'] == "") {
   <div class="wrapper">
     <header class="main-header">
       <!-- Logo -->
-      <a href="index2.html" class="logo">
+      <a href="index.php" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
           <b>D</b>Lib
@@ -173,7 +173,8 @@ if ($_SESSION['role'] == "") {
             <label>Penerbit</label>
             <input type="text" readonly="readonly" name="penerbit" value="<?php echo $data['penerbit']; ?>" class="form-control" placeholder="Masukan penerbit" />
             <label>Tanggal Pinjam</label>
-            <input type="text" readonly="readonly" name="tgl_pinjam" class="form-control" value="<?php $tgl = date('Y-m-d');echo $tgl; ?>"/>
+            <input type="text" readonly="readonly" name="tgl_pinjam" class="form-control" value="<?php $tgl = date('Y-m-d');
+                                                                                                  echo $tgl; ?>" />
             <input type="hidden" name="upload" value="<?php echo $data['upload']; ?>" class="form-control" placeholder="Masukan penerbit" />
             <br>
             <button type="submit" class="btn btn-primary">Pinjam</button>
