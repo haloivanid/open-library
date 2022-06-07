@@ -160,10 +160,6 @@ if ($_SESSION['role'] == "") {
             </a>
             <ul class="treeview-menu">
               <li>
-                <a href="pinjam.html">
-                  <i class="fa fa-refresh"></i> Peminjaman </a>
-              </li>
-              <li>
                 <a href="/core/services/logout.php">
                   <i class="fa fa-sign-out"></i> Logout </a>
               </li>
