@@ -5,6 +5,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/databases/connection.php';
 $no_anggota = $_GET['no_anggota'];
 // menghapus data dari database
 mysqli_query($koneksi,"delete from anggota where no_anggota='$no_anggota'");
- // mengalihkan halaman kembali ke index.php
-header("location:anggota.php");
+// mengalihkan halaman kembali ke index.php
+header("Location: http://" . $_SERVER['HTTP_HOST'] . "/core/pages/admin/anggota.php");
 ?>

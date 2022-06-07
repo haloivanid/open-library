@@ -66,11 +66,10 @@ if ($_SESSION['role'] == "") {
       $previous = $halaman - 1;
       $next = $halaman + 1;
 
-      $data = mysqli_query($koneksi, "select * from pinjam");
+      $data = mysqli_query($koneksi, "select * from pinjam where username =  '" . $_SESSION['username'] . "'");
       $jumlah_data = mysqli_num_rows($data);
       $total_halaman = ceil($jumlah_data / $batas);
 
-      $data = mysqli_query($koneksi, "select * from pinjam");
       while ($d = mysqli_fetch_array($data)) {
       ?>
         <tr>
